@@ -96,7 +96,7 @@ h1 {
   top: 15px;
 }
 .carousel-item {
-  margin: 0 auto;
+  margin: 0;
 }
 
 .carousel-control-next-icon,
@@ -109,7 +109,7 @@ h1 {
   position: relative;
 } */
 .carousel-item.active {
-  display: block !important;
+  display: block;
 }
 .weather-delete,
 .weather-save {
