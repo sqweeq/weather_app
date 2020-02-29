@@ -102,11 +102,11 @@ h1 {
 .carousel-control-prev-icon {
   filter: brightness(20%);
 }
-.carousel-item-next,
+/* .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {
   display: none;
-}
+} */
 .weather-delete,
 .weather-save {
   margin: 0rem 0rem 2rem 0rem !important;
