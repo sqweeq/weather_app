@@ -81,9 +81,9 @@ h1 {
   display: flex;
   flex-direction: row;
 }
-.show-more-each {
+/* .show-more-each {
   margin: 20px;
-}
+} */
 .weather-image {
   height: auto;
   max-width: 120px;
