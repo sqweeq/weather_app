@@ -105,6 +105,8 @@ h1 {
   filter: brightness(20%);
 }
 
+.carousel-item-next,
+.carousel-item-prev,
 .carousel-item.active {
   display: block !important;
 }
