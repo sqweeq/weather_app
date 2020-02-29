@@ -96,19 +96,19 @@ h1 {
   top: 15px;
 }
 .carousel-item {
-  margin: 0;
+  margin-right: -100%;
 }
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: brightness(20%);
 }
-.carousel-item-next,
+/* .carousel-item-next,
 .carousel-item-prev {
   display: none;
 }
 .carousel-item.active {
   display: block;
-}
+} */
 .weather-delete,
 .weather-save {
   margin: 0rem 0rem 2rem 0rem !important;
