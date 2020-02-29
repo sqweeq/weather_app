@@ -96,8 +96,7 @@ h1 {
   top: 15px;
 }
 .carousel-item {
-  margin: 0;
-  display: none;
+  margin: 0 auto;
 }
 
 .carousel-control-next-icon,
@@ -105,8 +104,10 @@ h1 {
   filter: brightness(20%);
 }
 
-.carousel-item-next,
-.carousel-item-prev,
+/* .carousel-item-next,
+.carousel-item-prev {
+  position: relative;
+} */
 .carousel-item.active {
   display: block !important;
 }
