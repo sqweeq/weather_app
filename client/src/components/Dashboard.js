@@ -56,8 +56,9 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     const { isAuthenticated } = this.props.auth;
     // items.map((each, i) => console.log(items[i].showMore));
-    const userItems = items && items.filter(item => item.newID === user._id);
-    console.log(userItems);
+    const userItems =
+      items && user && items.filter(item => item.newID === user._id);
+    // console.log(userItems);
 
     return (
       <div className="container">
