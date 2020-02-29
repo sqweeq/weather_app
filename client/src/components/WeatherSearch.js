@@ -122,7 +122,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
   };
 
   // console.log(weatherData);
-  console.log(initialQuery);
+  // console.log(initialQuery);
 
   return (
     <div className="container">

@@ -100,7 +100,7 @@ h1 {
 }
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-  color: black;
+  filter: brightness(20%);
 }
 .weather-delete,
 .weather-save {

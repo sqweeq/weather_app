@@ -56,6 +56,8 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     const { isAuthenticated } = this.props.auth;
     // items.map((each, i) => console.log(items[i].showMore));
+    const userItems = items && items.filter(item => item.newID === user._id);
+    console.log(userItems);
 
     return (
       <div className="container">
@@ -71,6 +73,11 @@ class Dashboard extends Component {
             </Button>
             <h1>Hi {user.name}</h1>
             <p>This is your dashboard</p>
+            <p>
+              {userItems && userItems.length === 0
+                ? "Search and add cities to your dashboard!"
+                : null}
+            </p>
             <div className="all-weather-container">
               {items.map(({ weathers, _id, newID }, i) =>
                 newID === user._id

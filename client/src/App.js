@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import WeatherSearch from "./components/WeatherSearch";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  useLocation,
-  useHistory
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -31,11 +25,6 @@ function App() {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
-
-  const location = useLocation();
-  const history = useHistory();
-  console.log(location);
-  console.log(history);
 
   return (
     <Provider store={store}>
