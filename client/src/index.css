@@ -1,0 +1,134 @@
+/* set defaults */
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+}
+body {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px) / (1600 - 300)));
+}
+.app-container,
+.container {
+  height: auto;
+  margin-top: 1.5rem;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+/* nav */
+.navbar {
+  margin: 2rem 4rem;
+  height: auto;
+  border: 1px solid black;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+}
+.MuiBottomNavigation-root {
+  height: 13vh !important;
+  padding: 0.6rem 0rem 0.4rem 0rem;
+}
+
+.navbar a:hover {
+  background-color: rgb(156, 177, 222);
+  transition: 0.7s;
+}
+/* weathersearch  */
+
+h1 {
+  padding: 1rem 0rem 1rem 0rem;
+  margin: 0;
+  height: auto;
+}
+
+.input-weather {
+  padding: 0.4rem;
+  margin: 1rem;
+}
+
+.loading-gif {
+  height: auto;
+  max-width: 150px;
+  min-width: 130px;
+}
+.all-weather-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-auto-rows: minmax(150px, 1fr);
+  justify-content: center;
+}
+.each-weather {
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 0.1px solid white;
+  margin: 0.4rem;
+}
+.each-weather:hover {
+  box-shadow: 2px 8px 16px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 0.1px solid blue;
+  display: inline-block;
+}
+.each-container {
+  padding: 1.8rem;
+}
+.each-weather-title {
+  padding-bottom: 1.2rem;
+}
+.show-more-content {
+  display: flex;
+  flex-direction: row;
+}
+.show-more-each {
+  margin: 20px;
+}
+.weather-image {
+  height: auto;
+  max-width: 120px;
+}
+.each-container hr {
+  padding-top: 1rem;
+  color: black;
+}
+.weather-button {
+  top: 15px;
+}
+.carousel-item {
+  margin: 0;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  color: black;
+}
+.weather-delete,
+.weather-save {
+  margin: 0rem 0rem 2rem 0rem !important;
+}
+
+.logout-button {
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0.7rem;
+  width: 15vw;
+  margin: 0 auto;
+}
+
+.carousel {
+  padding-top: 1rem;
+}
+/* register/login  */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: auto;
+}
+.MuiButton-label {
+  padding: 0.5rem;
+}
+.my-btn {
+  top: 1.2rem;
+}
