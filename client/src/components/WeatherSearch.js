@@ -126,7 +126,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
 
   return (
     <div className="container">
-      <h1 className="title">Weather</h1>
+      <h1 className="title">Weather Hunter</h1>
       {user && <div>You are logged in!</div>}
 
       <div>
