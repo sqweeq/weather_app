@@ -96,7 +96,8 @@ h1 {
   top: 15px;
 }
 .carousel-item {
-  margin-right: -100%;
+  margin: 0;
+  overflow: hidden;
 }
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
