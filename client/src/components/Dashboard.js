@@ -193,7 +193,7 @@ class Dashboard extends Component {
         ) : (
           <div>
             <h1>Hi guest!</h1>
-            <p>This is your dashboard, please login to view</p>
+            <p>This is your dashboard, please register and login to view</p>
           </div>
         )}
       </div>
