@@ -8,7 +8,7 @@ import {
 import axios from "axios";
 import { tokenConfig } from "../actions/authActions";
 import { returnErrors } from "../actions/errorActions";
-
+// get items
 export const getItems = () => dispatch => {
   dispatch(setItemsLoading());
   axios
@@ -23,6 +23,7 @@ export const getItems = () => dispatch => {
       dispatch(returnErrors(err.response.data, err.response.status))
     );
 };
+// delete items
 export const deleteItem = id => (dispatch, getState) => {
   axios
     .delete(`/api/items/${id}`, tokenConfig(getState))
@@ -36,6 +37,7 @@ export const deleteItem = id => (dispatch, getState) => {
       dispatch(returnErrors(err.response.data, err.response.status))
     );
 };
+// add item
 export const addItem = item => (dispatch, getState) => {
   axios
     .post("/api/items", item, tokenConfig(getState))
@@ -49,6 +51,7 @@ export const addItem = item => (dispatch, getState) => {
       dispatch(returnErrors(err.response.data, err.response.status))
     );
 };
+// show more
 export const handleShow = item => {
   return {
     type: SHOW_MORE,

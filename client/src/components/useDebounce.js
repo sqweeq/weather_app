@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
 // Our hook
+
+// debounce functions used to make query data smoother with less bugs
 export default function useDebounce(value, delay) {
   // State and setters for debounced value
   const [debouncedValue, setDebouncedValue] = useState(value);

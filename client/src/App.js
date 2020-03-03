@@ -76,13 +76,12 @@ function App() {
               icon={<VpnKeyIcon />}
             />
           </BottomNavigation>
-          {/* <Switch> */}
+
           <Route path="/search" component={WeatherSearch} />
           <Route path="/nearby" component={Nearby} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/" exact component={Dashboard} />
-          {/* </Switch> */}
         </div>
       </Router>
     </Provider>

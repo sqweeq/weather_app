@@ -27,6 +27,7 @@ class Dashboard extends Component {
   };
 
   render() {
+    // convert data from api to days and months
     function getMyDay(day) {
       const date1 = new Date(day);
       const dayOfWeekIndex = date1.getDay();
@@ -62,6 +63,7 @@ class Dashboard extends Component {
 
     return (
       <div className="container">
+        {/* if logged in */}
         {isAuthenticated === true ? (
           <div className="dashboard-weather-container">
             <Button
@@ -79,6 +81,7 @@ class Dashboard extends Component {
                 ? "Search and add cities to your dashboard!"
                 : null}
             </p>
+            {/* map items */}
             <div className="all-weather-container">
               {items.map(({ weathers, _id, newID }, i) =>
                 newID === user._id
@@ -107,7 +110,7 @@ class Dashboard extends Component {
                               )}{" "}
                             degrees celcius
                           </h6>
-
+                          {/* carousel for weather for days of week */}
                           <Carousel interval={0}>
                             <Carousel.Item>
                               <h6>Today</h6>
@@ -138,7 +141,7 @@ class Dashboard extends Component {
                                 %
                               </h6>
                             </Carousel.Item>
-
+                            {/* map over data for days of week */}
                             {weathers[0].res.consolidated_weather &&
                               weathers[0].res.consolidated_weather.map(
                                 (weather, i) => (
@@ -191,6 +194,7 @@ class Dashboard extends Component {
             </div>
           </div>
         ) : (
+          // if not logged in
           <div>
             <h1>Hi guest!</h1>
             <p>This is your dashboard, please register and login to view</p>

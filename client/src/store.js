@@ -8,7 +8,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,
   initialState,
-
+  // if in production/deployed, disable redux tools
   process.env.NODE_ENV === "production"
     ? compose(applyMiddleware(thunk))
     : compose(composeEnhancer(applyMiddleware(thunk)))

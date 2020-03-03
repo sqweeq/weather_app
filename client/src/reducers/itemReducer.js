@@ -40,8 +40,6 @@ export default function(state = initialState, action) {
       };
 
     case SHOW_MORE:
-      // const { showMore } = state.items;
-
       return {
         ...state,
         items: state.items.map(item => {

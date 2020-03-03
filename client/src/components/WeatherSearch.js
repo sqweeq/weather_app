@@ -62,19 +62,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
     getWeather();
   }, [initialQuery]);
 
-  // onClick to toggle boolean to show more
-  // function handleShow(id) {
-  //   const newData = weatherData.map(item => {
-  //     if (item.res.woeid === id) {
-  //       return {
-  //         ...item,
-  //         showMoreStuff: !item.showMoreStuff
-  //       };
-  //     } else return item;
-  //   });
-  //   setWeatherData(newData);
-  // }
-  // funct to return correct day and month from data
+  // funct to return convert day and month from data
   function getMyDay(day) {
     const date1 = new Date(day);
     const dayOfWeekIndex = date1.getDay();
@@ -90,8 +78,6 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
     }, 3500);
   }
 
-  // useEffect(() => {
-  // }, [itemToShow]);
   function getMyMonth(month) {
     const month1 = new Date(month);
     const dayOfMonthIndex = month1.getMonth();
@@ -148,6 +134,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
         />
       ) : (
         <div className="all-weather-container">
+          {/* map over queried data */}
           {weatherData.map((item, i) => (
             <div className="each-weather" key={item.res.woeid}>
               <div className="each-container">
@@ -173,7 +160,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
                 <h6>{item.res.timezone}</h6>
                 <h6>Time: {item.res.time.slice(11, 16)}</h6>
                 <hr />
-
+                {/* carousel for days of week weather */}
                 <Carousel interval={0}>
                   <Carousel.Item>
                     <h6>Today</h6>
@@ -196,7 +183,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
                       %
                     </h6>
                   </Carousel.Item>
-
+                  {/* map */}
                   {item.res.consolidated_weather.map((weather, i) => (
                     <Carousel.Item className="show-more-each" key={i}>
                       {i === 0 ? (
@@ -244,78 +231,6 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
                     </Carousel.Item>
                   ))}
                 </Carousel>
-                {/* {item.showMoreStuff === false ? (
-                <Button
-                  className="weather-button"
-                  variant="outlined"
-                  color="primary"
-                  onClick={() => handleShow(item.res.woeid)}
-                >
-                  Show more
-                </Button>
-              ) : (
-                <div>
-                  <hr />
-                  <div className="show-more-content">
-                    {item.res.consolidated_weather.map((weather, i) => (
-                      <div className="show-more-each" key={i}>
-                        {i === 0 ? (
-                          <h6>Tomorrow</h6>
-                        ) : (
-                          <h6>
-                            {getMyDay(
-                              item.res.consolidated_weather[i].applicable_date
-                            )}{" "}
-                            {parseInt(
-                              item.res.consolidated_weather[
-                                i
-                              ].applicable_date.slice(8, 10)
-                            ) < 10
-                              ? item.res.consolidated_weather[
-                                  i
-                                ].applicable_date.slice(9, 10)
-                              : item.res.consolidated_weather[
-                                  i
-                                ].applicable_date.slice(8, 10)}{" "}
-                            {getMyMonth(
-                              item.res.consolidated_weather[i].applicable_date
-                            )}
-                          </h6>
-                        )}
-                        <img
-                          className="weather-image"
-                          src={`https://www.metaweather.com/static/img/weather/${item.res.consolidated_weather[i].weather_state_abbr}.svg`}
-                          alt="weather state"
-                        />
-                        <h6>
-                          {item.res.consolidated_weather[i].weather_state_name}
-                        </h6>
-                        <h6>
-                          {item.res.consolidated_weather[i].the_temp &&
-                            item.res.consolidated_weather[i].the_temp.toFixed(
-                              1
-                            )}
-                          C
-                        </h6>
-                        <h6>
-                          Predictability:{" "}
-                          {item.res.consolidated_weather[i].predictability &&
-                            item.res.consolidated_weather[i].predictability}
-                          %
-                        </h6>
-                      </div>
-                    ))}
-                  </div>
-                  <Button
-                    className="weather-button"
-                    variant="outlined"
-                    color="primary"
-                    onClick={() => handleShow(item.res.woeid)}
-                  >
-                    Show less
-                  </Button>
-                </div>
-              )} */}
               </div>
             </div>
           ))}

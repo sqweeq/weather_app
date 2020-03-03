@@ -21,6 +21,7 @@ class Login extends Component {
   onLogout = () => {
     this.props.logout();
   };
+  // get recent errors
   componentDidUpdate(prevProps) {
     //   see if error props has changed
     const { error } = this.props;
@@ -33,17 +34,13 @@ class Login extends Component {
       }
     }
   }
-  // static getDerivedStateFromProps(nextProps) {
-  //   if (nextProps.isAuthenticated) {
-  //     this.props.history.push("/");
-  //   } else return null;
-  // }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
-
+  // submit login
   onSubmit = e => {
     e.preventDefault();
     const { email, password } = this.state;

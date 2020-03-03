@@ -18,6 +18,7 @@ class Register extends Component {
     error: PropTypes.object,
     register: PropTypes.func.isRequired
   };
+  // get recent error
   componentDidUpdate(prevProps) {
     //   see if error props has changed
     const { error } = this.props;
@@ -40,6 +41,7 @@ class Register extends Component {
       [e.target.name]: e.target.value
     });
   };
+  // submit register
   handleSubmit = e => {
     e.preventDefault();
     const { name, email, password } = this.state;

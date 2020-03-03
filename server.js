@@ -4,7 +4,7 @@ const app = express();
 require("dotenv").config();
 const path = require("path");
 const API_KEY = process.env.MONGO_KEY;
-
+// cors
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
@@ -35,7 +35,7 @@ app.use("/api/items", require("./routes/items"));
 app.use("/api/auth", require("./routes/auth"));
 
 if (process.env.NODE_ENV === "production") {
-  // Exprees will serve up production assets
+  // Express will serve up production assets
   app.use(express.static("client/build"));
 
   // Express serve up index.html file if it doesn't recognize route
