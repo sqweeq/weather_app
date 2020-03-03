@@ -1,7 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-require("dotenv").config();
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 const path = require("path");
 const API_KEY = process.env.MONGO_KEY;
 // cors
