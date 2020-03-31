@@ -66,7 +66,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
   function getMyDay(day) {
     const date1 = new Date(day);
     const dayOfWeekIndex = date1.getDay();
-    const dayNames = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sund"];
+    const dayNames = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
     return dayNames[dayOfWeekIndex];
   }
   function showAdded(i) {
@@ -161,7 +161,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
                 <h6>Time: {item.res.time.slice(11, 16)}</h6>
                 <hr />
                 {/* carousel for days of week weather */}
-                <Carousel interval={0}>
+                <Carousel interval={null}>
                   <Carousel.Item>
                     <h6>Today</h6>
                     <img
@@ -175,6 +175,7 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
                     <h6>
                       {item.res.consolidated_weather[0].the_temp &&
                         item.res.consolidated_weather[0].the_temp.toFixed(1)}
+                      C
                     </h6>
                     <h6>
                       Predictability:{" "}

@@ -111,7 +111,7 @@ class Dashboard extends Component {
                             degrees celcius
                           </h6>
                           {/* carousel for weather for days of week */}
-                          <Carousel interval={0}>
+                          <Carousel interval={null}>
                             <Carousel.Item>
                               <h6>Today</h6>
                               <img
@@ -131,6 +131,7 @@ class Dashboard extends Component {
                                   weathers[0].res.consolidated_weather[0].the_temp.toFixed(
                                     1
                                   )}
+                                C
                               </h6>
                               <h6>
                                 Predictability:{" "}

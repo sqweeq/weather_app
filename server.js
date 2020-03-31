@@ -4,7 +4,7 @@ const app = express();
 
 require("dotenv").config();
 const path = require("path");
-const API_KEY = process.env.MONGO_KEY;
+const API_KEY = process.env.mongoURI;
 // cors
 const cors = require("cors");
 app.use(cors());
