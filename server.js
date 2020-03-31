@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
   );
   next();
 });
-// DB Config
+// DB Configurations
 
 // Connect to MongoDB
 mongoose
