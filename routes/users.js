@@ -47,7 +47,7 @@ router.post("/", (req, res) => {
               }
             );
           })
-          .catch();
+          .catch(console.log("caught"));
       });
     });
   });

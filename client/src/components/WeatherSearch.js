@@ -26,7 +26,15 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
   // query many cities worldID, only 11 at a time
   async function getQuery(search) {
     await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${search}`
+      `https://limitless-earth-83548.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${search}`, 
+      {
+        method: 'GET', // or 'PUT'
+        headers: {
+          "Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+          "Access-Control-Allow-Headers": "Content-Type",
+          'Content-Type': 'application/json'
+        }
+      }
     )
       .then(res => res.json())
       .then(res => setInitialQuery(res.slice(0, 10)))
@@ -43,7 +51,15 @@ const WeatherList = ({ addItem, isAuthenticated, user }) => {
       Promise.all(
         initialQuery.map(item => {
           fetch(
-            `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${item.woeid}/`
+            `https://limitless-earth-83548.herokuapp.com/https://www.metaweather.com/api/location/${item.woeid}/`, 
+      {
+        method: 'GET', // or 'PUT'
+        headers: {
+          "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+          "Access-Control-Allow-Headers": "Content-Type",
+          'Content-Type': 'application/json'
+        }
+      }
           )
             .then(res => res.json())
             .then(res =>

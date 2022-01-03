@@ -5,6 +5,7 @@ const app = express();
 require("dotenv").config();
 const path = require("path");
 const API_KEY = process.env.mongoURI;
+
 // cors
 const cors = require("cors");
 app.use(cors());
@@ -24,8 +25,12 @@ app.use(function(req, res, next) {
 mongoose
   .connect(API_KEY, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
+    // useUnifiedTopology: true,
+    useCreateIndex: true,
+    dbName: 'Cluster0',
+    socketTimeoutMS: 45000,
+    keepAlive: true,
+    reconnectTries: 10
   })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
